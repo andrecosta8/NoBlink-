@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css"> 
     <title>NoBlink</title>
 </head>
 <body>
-    <div class="game-intro">
-        <button id="start-button">StartGame</button>
+    <div class="game-intro" class="container-fluid">
+        <img id="intro-image" src="/images/intro.png"  alt="noblinklogo">
+        <div class ="instructions"> Instructions:</div>
+        <div class ="list-of-instructions"><p>Click on the blue light to score!</p>
+            <p>When you score you will see the green light and your score incresing!</p>
+            <p></p>
+        </div>
+        <button id="start-button" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img src="/images/StartGame1.png"> </button> 
     </div>
 
         
       <div id="game-board"></div>
       
   
-      <div class="game-over"></div>
-      <button id="restart-button">RestartGame</button>
-
+      <div class="game-over">
+    <img id="gameover-image" src="/images/GameOverScreen.png" class="img-fluid" alt="GameOver">
+        <div class = "scores"> SCORES:</div>
+        <div class = "player-score"> PLAYER SCORE:</div>
+      <button id="restart-button" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"> <img src="/images/Restart.png"> </button> 
+      
+     </div>
       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
 </body>

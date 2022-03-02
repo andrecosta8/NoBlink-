@@ -1,3 +1,55 @@
+#game-board{
+    position: relative;
+  text-align: center;
+}
+
 .game-intro{
-    background-color: aqua;
+ position: relative;
+  text-align: center;
+  color: white;
+} 
+
+#intro-image{
+    width:100vw;
+    height:100vh;
+   
+}
+.instructions{
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 35vh;
+    left: 48vw;   
+   
+}
+.list-of-instructions{
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+   
+}
+#start-button{
+ position: absolute;
+ top: 80vh;
+left: 43vw;  
+
+   
+}
+#gameover-image{
+    width:100vw;
+    height:100vh;
+}
+
+.game-over{
+position: relative;
+  text-align: center;
+  color: white;
+}
+
+#restart-button{ 
+position: absolute;
+ top: 79vh;
+left: 41vw;  
 }
