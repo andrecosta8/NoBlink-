@@ -45,11 +45,25 @@ left: 43vw;
 .game-over{
 position: relative;
   text-align: center;
-  color: white;
+  color: red;
 }
 
 #restart-button{ 
 position: absolute;
  top: 79vh;
 left: 41vw;  
+}
+
+.player-score{
+  position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+}
+
+.scores{
+  position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
 }

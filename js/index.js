@@ -17,8 +17,8 @@ let scoreboard =[0,0,0,0,0];
 const gameIntroElement = document.querySelector(".game-intro");
 const gameOverElement = document.querySelector(".game-over");
 const gameBoardElement = document.getElementById("game-board");
-const playerScore = document.getElementsByClassName("player-score");
-const scoreBoardGame = document.getElementsByClassName("scores");
+const playerScore = document.querySelector(".player-score");
+const scoreBoardGame = document.querySelector(".scores");
 
 class Circles {
     constructor(x, y, width, heigth) {
@@ -56,10 +56,10 @@ function preload() {
 function setup() {
     const canvas = createCanvas(900, 900);
     canvas.parent("game-board");
-    one = circles[0] = new Circles(300, 250, 100, 100);
-    two = circles[1] = new Circles(300, 500, 100, 100);
-    three = circles[2] = new Circles(600, 250, 100, 100);
-    four = circles[3] = new Circles(600, 500, 100, 100);
+   circles[0] = new Circles(300, 250, 100, 100);
+    circles[1] = new Circles(300, 500, 100, 100);
+     circles[2] = new Circles(600, 250, 100, 100);
+    circles[3] = new Circles(600, 500, 100, 100);
 
 }
 
@@ -112,28 +112,28 @@ function updateTheScore(react) {
     let timeScore = Math.max(timeUntilNewCircle - react, 0);
     score = Math.round(score + (timeScore) / 10);
     if (score <= 1000) {
-        timeCountDown += Math.round(react / 500);
-    } else if (score > 1000) {
         timeCountDown += Math.round(react / 600);
-    } else if (score > 2000) {
+    } else if (score > 1000) {
         timeCountDown += Math.round(react / 700);
-    } else if (score > 3000) {
+    } else if (score > 2000) {
         timeCountDown += Math.round(react / 800);
-    } else if (score > 4000) {
+    } else if (score > 3000) {
         timeCountDown += Math.round(react / 900);
+    } else if (score > 4000) {
+        timeCountDown += Math.round(react / 1000);
     }
     return score;
 }
     function printTheScore(points){
-        for(let i = 0; i < scoreboard.length; i++) {
+        for(let i = 0; i < scoreboard.length; i++) { 
         if (points > scoreboard[i]){
             scoreboard.splice(i, 0, points);
             scoreboard.length = Math.min(scoreboard.length, 5); 
             break;
     }
 }
-    }
-
+}
+    
     window.onload = () => {
         gameIntroElement.style.display = "block";
         gameBoardElement.style.display = "none";
@@ -152,14 +152,17 @@ function updateTheScore(react) {
     function gameOver() {
         clearInterval(startInterval);
         printTheScore(score);
-        console.log(scoreboard);
+        scoreBoardGame.innerHTML =`Top Scores:
+        <ul><li>${scoreboard[0]}</li><li>${scoreboard[1]}</li><li>${scoreboard[2]}</li><li>${scoreboard[3]}</li><li>${scoreboard[4]}</li> </ul>`;
+        playerScore.innerText =`Your score: ${score}` ;
         score = 0;
         timeCountDown = 10;
         gameIntroElement.style.display = "none";
         gameBoardElement.style.display = "none";
         gameOverElement.style.display = "block"; 
-        playerScore.innerText = score;
-        scoreBoardGame.innerText = scoreboard;
+
+
+        
     }
 
     function startGame() {
