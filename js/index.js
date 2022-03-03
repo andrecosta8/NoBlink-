@@ -49,7 +49,7 @@ class Circles {
     }
 }
 function preload() {
-    img = loadImage('/images/noblinksample3.png');
+    img = loadImage('images/noblinksample3.png');
     
 }
 
