@@ -1,11 +1,15 @@
 #game-board{
+  background-color:black;
     position: relative;
   text-align: center;
 }
 
 .game-intro{
- position: relative;
-  text-align: center;
+ display:flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   color: white;
 } 
 
@@ -15,19 +19,21 @@
    
 }
 .instructions{
+  font-size: xx-large;
     color: white;
     position: absolute;
     text-align: center;
-    top: 35vh;
-    left: 48vw;   
+    top: 38vh;
+    left: 45vw;   
    
 }
 .list-of-instructions{
+    font-size: larger;
     color: white;
     position: absolute;
-    text-align: center;
-    top: 40%;
-    left: 50%;
+    text-align:center;
+    top: 48vh;
+    left: 35vw;
    
 }
 #start-button{
@@ -45,25 +51,26 @@ left: 43vw;
 .game-over{
 position: relative;
   text-align: center;
-  color: red;
+  color: White;
 }
 
 #restart-button{ 
 position: absolute;
- top: 79vh;
-left: 41vw;  
+top: 79%;
+left: 42%;  
 }
 
 .player-score{
-  position: absolute;
-    text-align: center;
-    top: 20%;
-    left: 50%;
+  font-size: xx-large;
+  position: absolute; 
+    top: 40%;
+    left: 35%;
 }
 
 .scores{
+  font-size: larger;
   position: absolute;
     text-align: center;
-    top: 40%;
-    left: 50%;
+    top: 35%;
+    left: 55%;
 }

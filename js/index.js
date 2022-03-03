@@ -1,5 +1,5 @@
 let circles = [];
-let baseColor = "red";
+let baseColor = "grey";
 let lightColor = "blue";
 let randomChoice;
 let one;
@@ -50,11 +50,11 @@ class Circles {
 }
 function preload() {
     img = loadImage('images/noblinksample3.png');
-    
+    img2 = loadImage('images/motion.jpg');
 }
 
 function setup() {
-    const canvas = createCanvas(900, 900);
+    const canvas = createCanvas(900,900);
     canvas.parent("game-board");
    circles[0] = new Circles(300, 250, 100, 100);
     circles[1] = new Circles(300, 500, 100, 100);
@@ -64,7 +64,7 @@ function setup() {
 }
 
 function draw() {
-    background(50);
+    background(img2,0,0,900,900);
     for (let i = 0; i < circles.length; i++) {
         if (randomChoice === i) {
             circles[i].change();
@@ -77,7 +77,7 @@ function draw() {
     text(`Score: ${score}`, 50, 100);
     fill("red");
     text(`Time: ${timeCountDown}`, 675, 100);
-    image(img, -30, 500, 900, 450);
+    image(img, -20, 500, 900, 450);
 
 }
 
