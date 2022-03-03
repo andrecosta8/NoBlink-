@@ -25,7 +25,7 @@ The game ends when timer as reach 0 seconds. After that players are able to see 
     * display()
     * change()
     * colidesWithPoint()
-     *colidesWithMouse()
+    * colidesWithMouse()
 * preload()
 * setup()
 * draw()
